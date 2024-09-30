@@ -1,0 +1,44 @@
+﻿<Window x:Class="Calibration.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calibration"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="132,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="81"><Run Text="Measured"/><LineBreak/><Run Text="Vp-p(+)"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="132,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="81"><Run Text="Measured"/><LineBreak/><Run Text="Vp-p(-)"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="232,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="98"><Run Text="Current Vp-p(+)"/><LineBreak/><Run Text="Cal val"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="232,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="98"><Run Text="Current Vp-p(-)"/><LineBreak/><Run Text="Cal val"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="350,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="98"><Run Text="Stored Vp-p(+)"/><LineBreak/><Run Text="Cal val"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="350,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="98"><Run Text="Stored Vp-p(-)"/><LineBreak/><Run Text="Cal val"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="495,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="98"><Run Text="Adj Cal"/><LineBreak/><Run Text="Current val"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center" Margin="495,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="98"><Run Text="Adj Cal"/><LineBreak/><Run Text="Current val"/></TextBlock>
+
+            <Button Content="+" HorizontalAlignment="Left" Cursor="Hand" Height="37" Margin="507,106,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Plus_Pos"/>
+            <Button Content="-" HorizontalAlignment="Left" Cursor="Hand" Height="37" Margin="556,106,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Minus_Pos"/>
+            <Button Content="+" HorizontalAlignment="Left" Cursor="Hand" Height="37" Margin="507,255,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Plus_Neg"/>
+            <Button Content="-" HorizontalAlignment="Left" Cursor="Hand" Height="37" Margin="556,255,0,0" VerticalAlignment="Top" Width="40" Click="Button_Click_Minus_Neg"/>
+
+            <TextBlock x:Name="MVpPlus" HorizontalAlignment="Left" Margin="142,110,0,0" TextWrapping="Wrap" Text="{Binding PositiveCalVal.Measured}" TextAlignment="Center" VerticalAlignment="Top" Width="60" Height="30"/>
+            <TextBlock x:Name="CurrVpPlus" HorizontalAlignment="Left" Margin="251,110,0,0" TextWrapping="Wrap" Text="{Binding PositiveCalVal.Current}" TextAlignment="Center" VerticalAlignment="Top" Width="60" Height="30"/>
+            <TextBlock x:Name="StoredVpPlus" HorizontalAlignment="Left" Margin="350,110,0,0" TextWrapping="Wrap" Text="{Binding PositiveCalVal.Stored}" TextAlignment="Center" VerticalAlignment="Top" Width="60" Height="30"/>
+
+            <TextBlock x:Name="MVpMin" HorizontalAlignment="Left" Margin="142,258,0,0" TextWrapping="Wrap" Text="{Binding NegativeCalVal.Measured}" TextAlignment="Center" VerticalAlignment="Top" Width="60" Height="30"/>
+            <TextBlock x:Name="CurrVpMin" HorizontalAlignment="Left" Margin="251,258,0,0" TextWrapping="Wrap" Text="{Binding NegativeCalVal.Current}" TextAlignment="Center" VerticalAlignment="Top" Width="60" Height="30"/>
+            <TextBlock x:Name="StoredVpMin" HorizontalAlignment="Left" Margin="350,258,0,0" TextWrapping="Wrap" Text="{Binding NegativeCalVal.Stored}" TextAlignment="Center" VerticalAlignment="Top" Width="60" Height="30"/>
+
+            <Button Content="Save Cal Values" Cursor="Hand"  HorizontalAlignment="Left" Margin="132,327,0,0" VerticalAlignment="Top" Height="47" Width="139" Click="Button_Click_Save_Cal_Values"/>
+
+
+            <DockPanel>
+                <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" />
+            </DockPanel>
+            <Button x:Name="DCorvusMess" Content="D-Corvus Messages" HorizontalAlignment="Left" Cursor="Hand" Margin="629,350,0,0" VerticalAlignment="Top" Click="Button_Click_DCorvus_Messages"/>
+
+        </Grid>
+    </Grid>
+</Window>
